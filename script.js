@@ -59,7 +59,7 @@ function calculateAndDisplayAge() {
     // --- Calculate Age Components ---
     // Ensure countdown is hidden and age displays are visible if born
     countdownContainer.style.display = 'none';
-    // ageElementYMD.closest('.age-display').style.display = 'flex';
+    ageElementYMD.closest('.age-display').style.display = 'flex';
     ageElementYears.closest('.age-display').style.display = 'flex';
     ageElementMonths.closest('.age-display').style.display = 'flex';
     ageElementWeeks.closest('.age-display').style.display = 'flex';
