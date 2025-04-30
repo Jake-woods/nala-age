@@ -10,35 +10,19 @@ html {
 }
 
 body {
-    /* --- PandaMonk Background --- */
-    /* Option 1: Clean Tech Grey */
-    background-color: #e8eaed; /* Light grey */
-    /* Option 2: Subtle Gradient */
-    /* background: linear-gradient(135deg, #f8f9fa, #e8eaed); */ /* White to Grey */
-    /* Option 3: Subtle Pattern (Requires image) */
-    /* background-image: url('path/to/subtle-circuit-pattern.png'); */
+    /* --- Gradient Background --- */
+    background: linear-gradient(to bottom right, #1565c0, #00796b); /* Blue to Teal gradient */
 
+    /* --- Base Body Styles --- */
     font-family: 'Roboto', sans-serif; /* Clear and functional */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: #3c4043; /* Dark Grey for text */
+    color: #3c4043; /* Dark Grey for text - Adjust if needed for contrast */
     line-height: 1.6;
     padding: 20px;
     overflow-x: hidden; /* Prevent horizontal scroll */
-        /* --- Gradient Background --- */
-    background: linear-gradient(to bottom right, #1565c0, #00796b); /* Pink to Blue gradient */
-    /* Keep other existing body styles */
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    color: #3c4043; /* Adjust text color if needed for contrast */
-    line-height: 1.6;
-    padding: 20px;
-    overflow-x: hidden;
 }
 
 /* --- The PandaMonk Card --- */
@@ -98,9 +82,9 @@ h2 {
     border-radius: 8px; /* Standard rounding */
     margin-bottom: 14px;
     text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Default direction is row */
+    justify-content: space-between; /* Pushes label left, value+unit right */
+    align-items: center; /* Vertically centers items */
     font-size: 1rem;
     box-shadow: none; /* Flatter look */
     transition: background-color 0.2s ease-in-out;
@@ -113,7 +97,7 @@ h2 {
 .age-display .label {
     color: #5f6368; /* Medium Grey */
     font-size: 0.9rem;
-    margin-right: 15px;
+    margin-right: 15px; /* Space between label and value */
     font-weight: 400; /* Regular weight */
 }
 
@@ -126,6 +110,8 @@ h2 {
     padding: 0; /* Remove padding */
     border-radius: 0;
     box-shadow: none; /* No shadow */
+    /* Ensure it stays inline with the unit text */
+    display: inline;
 }
 
 /* --- Countdown Styling (Notification Style) --- */
@@ -133,7 +119,9 @@ h2 {
     background-color: #e3f2fd; /* Light Blue */
     border-color: #bbdefb; /* Lighter Blue */
     border-style: solid;
+    border-width: 1px;
 }
+
 
 .countdown strong {
     color: #1565c0; /* Darker Blue */
@@ -145,6 +133,8 @@ h2 {
 
 
 /* --- Mobile Friendliness --- */
+/* We keep the media queries for general responsiveness like card padding and font sizes,
+   but remove the specific overrides for .age-display layout */
 @media (max-width: 650px) {
     body {
         padding: 15px;
@@ -163,22 +153,17 @@ h2 {
         font-size: 1.15rem;
     }
 
+    /* Adjust padding and font size for age-display on mobile, but keep layout */
     .age-display {
         padding: 10px 15px;
         font-size: 0.95rem;
-        flex-direction: column;
-        align-items: flex-start;
         border-radius: 6px;
     }
 
-     .age-display .label {
-        margin-bottom: 5px;
-     }
-
     .age-display strong {
         font-size: 1.05rem;
-        align-self: flex-end; /* Keep value aligned right */
     }
+
 }
 
 @media (max-width: 400px) {
@@ -188,7 +173,9 @@ h2 {
      .card {
         padding: 20px 25px;
     }
+     /* Adjust padding for all displays on very small screens */
      .age-display {
         padding: 8px 12px;
      }
+
 }

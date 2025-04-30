@@ -59,7 +59,7 @@ function calculateAndDisplayAge() {
     // --- Calculate Age Components ---
     // Ensure countdown is hidden and age displays are visible if born
     countdownContainer.style.display = 'none';
-    ageElementYMD.closest('.age-display').style.display = 'flex';
+    // ageElementYMD.closest('.age-display').style.display = 'flex';
     ageElementYears.closest('.age-display').style.display = 'flex';
     ageElementMonths.closest('.age-display').style.display = 'flex';
     ageElementWeeks.closest('.age-display').style.display = 'flex';
@@ -84,10 +84,10 @@ function calculateAndDisplayAge() {
     // --- Build the age string --- (Years, Months, Days)
     let ageStringPartsYMD = [];
     // Always add the years part, even if it's 0
-    ageStringPartsYMD.push(`${years} year${years !== 1 ? 's' : ''}`); // Use !== 1 to handle 0 years correctly
+    ageStringPartsYMD.push(`${years}Y${years !== 1 ? 's' : ''}`); // Use !== 1 to handle 0 years correctly
 
     if (months > 0) {
-        ageStringPartsYMD.push(`${months} month${months > 1 ? 's' : ''}`);
+        ageStringPartsYMD.push(`${months}M${months > 1 ? 's' : ''}`);
     }
     // Show days if it's positive, or if years and months are both zero (i.e., less than a month old)
     // Also show days if years > 0 or months > 0 but days is 0 (e.g., exactly 1 year old)
@@ -103,7 +103,7 @@ function calculateAndDisplayAge() {
                 if (days === 0 && (years > 0 || months > 0)) {
                     ageStringPartsYMD.push(`0 days`);
                 } else if (days > 0) {
-                    ageStringPartsYMD.push(`${days} day${days !== 1 ? 's' : ''}`);
+                    ageStringPartsYMD.push(`${days}D${days !== 1 ? 's' : ''}`);
                 }
             }
         }
@@ -135,10 +135,10 @@ function calculateAndDisplayAge() {
     const totalYears = (diffInMs / MS_PER_YEAR_AVG).toFixed(2); // Approx, show decimals
 
     // --- Update HTML Elements ---
-    ageElementYears.textContent = totalYears;
-    ageElementMonths.textContent = totalMonths;
-    ageElementWeeks.textContent = totalWeeks;
-    ageElementDays.textContent = totalDays.toString(); // toString() just to be explicit
+    ageElementYears.textContent = `${totalYears} years`;
+    ageElementMonths.textContent = `${totalMonths} months`;
+    ageElementWeeks.textContent = `${totalWeeks} weeks`;
+    ageElementDays.textContent = `${totalDays.toString()} days`; // toString() just to be explicit
 
 }
 
