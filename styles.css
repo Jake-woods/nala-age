@@ -1,0 +1,194 @@
+/* --- Reset & Base --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    /* --- PandaMonk Background --- */
+    /* Option 1: Clean Tech Grey */
+    background-color: #e8eaed; /* Light grey */
+    /* Option 2: Subtle Gradient */
+    /* background: linear-gradient(135deg, #f8f9fa, #e8eaed); */ /* White to Grey */
+    /* Option 3: Subtle Pattern (Requires image) */
+    /* background-image: url('path/to/subtle-circuit-pattern.png'); */
+
+    font-family: 'Roboto', sans-serif; /* Clear and functional */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #3c4043; /* Dark Grey for text */
+    line-height: 1.6;
+    padding: 20px;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+        /* --- Gradient Background --- */
+    background: linear-gradient(to bottom right, #1565c0, #00796b); /* Pink to Blue gradient */
+    /* Keep other existing body styles */
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #3c4043; /* Adjust text color if needed for contrast */
+    line-height: 1.6;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* --- The PandaMonk Card --- */
+.card {
+    background-color: #ffffff; /* Clean white base */
+    border-radius: 12px; /* Slightly less rounded, more modern */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Standard clean shadow */
+    padding: 30px 35px;
+    width: 100%;
+    max-width: 580px;
+    text-align: center;
+    border: 1px solid #dadce0; /* Light grey border */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+/* Optional: Subtle interaction */
+/* .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+} */
+
+/* --- Typography & Content --- */
+h1 {
+    font-weight: 700;
+    color: #00796b; /* Teal - PandaMonk Accent */
+    margin-bottom: 10px;
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+}
+
+.birthdate {
+    color: #5f6368; /* Medium Grey */
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+h2 {
+    color: #1e88e5; /* Blue - Secondary Accent */
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0; /* Lighter grey separator */
+    padding-bottom: 8px;
+    text-align: left;
+}
+
+.age-details {
+    margin-top: 20px;
+}
+
+/* --- Info Displays (Clean & Functional) --- */
+.age-display {
+    background-color: #f8f9fa; /* Very light grey/off-white */
+    border: 1px solid #e8eaed; /* Match background grey */
+    padding: 12px 18px;
+    border-radius: 8px; /* Standard rounding */
+    margin-bottom: 14px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    box-shadow: none; /* Flatter look */
+    transition: background-color 0.2s ease-in-out;
+}
+
+.age-display:hover {
+    background-color: #e8f5e9; /* Subtle green tint on hover - playful */
+}
+
+.age-display .label {
+    color: #5f6368; /* Medium Grey */
+    font-size: 0.9rem;
+    margin-right: 15px;
+    font-weight: 400; /* Regular weight */
+}
+
+/* --- Highlighted Values (Clear Data) --- */
+.age-display strong {
+    color: #00796b; /* Teal Accent */
+    font-weight: 500; /* Medium weight */
+    font-size: 1.1rem;
+    background-color: transparent; /* No background */
+    padding: 0; /* Remove padding */
+    border-radius: 0;
+    box-shadow: none; /* No shadow */
+}
+
+/* --- Countdown Styling (Notification Style) --- */
+.countdown {
+    background-color: #e3f2fd; /* Light Blue */
+    border-color: #bbdefb; /* Lighter Blue */
+    border-style: solid;
+}
+
+.countdown strong {
+    color: #1565c0; /* Darker Blue */
+}
+
+.countdown .label {
+    color: #1e88e5; /* Medium Blue */
+}
+
+
+/* --- Mobile Friendliness --- */
+@media (max-width: 650px) {
+    body {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 25px 30px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.15rem;
+    }
+
+    .age-display {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 6px;
+    }
+
+     .age-display .label {
+        margin-bottom: 5px;
+     }
+
+    .age-display strong {
+        font-size: 1.05rem;
+        align-self: flex-end; /* Keep value aligned right */
+    }
+}
+
+@media (max-width: 400px) {
+     h1 {
+        font-size: 1.6rem;
+    }
+     .card {
+        padding: 20px 25px;
+    }
+     .age-display {
+        padding: 8px 12px;
+     }
+}

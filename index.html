@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nala</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Nala's Age</h1>
+        <p class="birthdate">
+            Born: February 14th, 2025
+        </p>
+
+        <div class="age-details">
+            <h2>Current Age Breakdown:</h2>
+            <p class="age-display">
+                <span class="label">Years, Months, Days:</span>
+                <strong id="dog-age-ymd">calculating...</strong>
+            </p>
+
+            <h2>Total Age:</h2>
+            <p class="age-display">
+                <span class="label">In Years:</span>
+                <strong id="dog-age-years">calculating...</strong> years
+            </p>
+            <p class="age-display">
+                <span class="label">In Months:</span>
+                <strong id="dog-age-months">calculating...</strong> months
+            </p>
+            <p class="age-display">
+                <span class="label">In Weeks:</span>
+                <strong id="dog-age-weeks">calculating...</strong> weeks
+            </p>
+            <p class="age-display">
+                <span class="label">In Days:</span>
+                <strong id="dog-age-days">calculating...</strong> days
+            </p>
+            <p class="age-display countdown" id="countdown" style="display: none;">
+                <span class="label">Countdown:</span>
+                <strong id="dog-countdown">calculating...</strong> until birthday!
+            </p>
+        </div>
+    </div>
+
+    <!-- Removed the walking dog div -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>
